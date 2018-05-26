@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "width": 500, "height": 500,
+  "data": {"url": "typeIMDB.csv"},
+        
+  "transform": [{"filter": {"field": "startYear", "oneOf":["1980","1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989"]}},
+        
+   {"filter": {"field": "genres", "oneOf":["Adult", "Western", "Action", "War", "Thriller", "Adult,Short", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Drama", "Drama,Family", "Adult", "Fantasy", "History", "Horror", "Music", "Musical", "Mystery", "Romance", "Sci-Fi", "Short", "Sport"]}}],
+        
+  "mark": "point",
+  "encoding": {
+    "y": {"field": "genres", "type": "nominal"},
+    "x": {"field": "averageRating", "type": "quantitative"},
+    "color": {"field": "titleType", "type": "nominal"},  
+  }
+
+}
